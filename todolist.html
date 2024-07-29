@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patamaswag</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="swag.png">
+</head>
+<body>
+    <header>
+        <h1>PATAMASWAG.GURU</h1>
+    </header>
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+    <div class="sidebar">
+        <a href="index.html"><img src="icons/home.png" alt="home" class="icon">domu</a>
+        <a href="autor.html"><img src="icons/user.png" alt="user" class="icon">o autorovi</a>
+        <a href="todolist.html"><img src="icons/todo.png" alt="user" class="icon">to-do list</a>
+        <a href="https://www.instagram.com/kralpata/"><img src="icons/ig.png" alt="instagram" class="icon">instagram</a>
+    </div>
+    <div id="main">
+        <div class="content2">
+            <h1>nejlepsi to-do list na svete🎯💯</h1>
+            <p>made by král páťa + chatgpt (brazy combo😈😈)</p>
+            
+            <input type="text" id="taskInput" placeholder="pridej ukol (treba vymenit si ponozky)" />
+            <input type="number" id="taskTotalInput" placeholder="pocet splneni (priklad 7x)" min="1" />
+            <button id="addTaskButton">vytvorit ukol</button>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+    <footer>
+        <p>to .guru bylo nejlevnejsi btw🙏</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            var sidebar = document.querySelector(".sidebar");
+            if (sidebar.style.width === '250px') {
+                sidebar.style.width = '0';
+                document.getElementById("main").style.marginLeft = '0';
+            } else {
+                sidebar.style.width = '250px';
+                document.getElementById("main").style.marginLeft = '250px';
+            }
+        }
+
+        // Funkce pro uložení úkolů do cookies
+        function saveTasks() {
+            const taskList = document.getElementById('taskList');
+            const tasks = [];
+
+            taskList.querySelectorAll('li').forEach(li => {
+                const text = li.querySelector('span').textContent;
+                const taskText = li.textContent.replace(text, '').trim();
+                const [completed, total] = text.split('/').map(Number);
+                
+                tasks.push({
+                    text: taskText,
+                    completed: completed,
+                    total: total
+                });
+            });
+
+            // Nastavit datum vypršení cookies na 10 let od dnešního dne
+            const expirationYears = 10;
+            const expiresDate = new Date();
+            expiresDate.setTime(expiresDate.getTime() + (expirationYears * 365 * 24 * 60 * 60 * 1000)); // Přibližně 10 let
+            const expires = `expires=${expiresDate.toUTCString()}`;
+
+            document.cookie = `tasks=${JSON.stringify(tasks)}; path=/; ${expires}`;
+        }
+
+        // Funkce pro načtení úkolů z cookies
+        function loadTasks() {
+            const cookies = document.cookie.split('; ');
+            const tasksCookie = cookies.find(cookie => cookie.startsWith('tasks='));
+
+            if (tasksCookie) {
+                const tasks = JSON.parse(tasksCookie.split('=')[1]);
+                const taskList = document.getElementById('taskList');
+
+                tasks.forEach(task => {
+                    const li = document.createElement('li');
+                    const taskCounter = document.createElement('span');
+                    taskCounter.classList.add('task-counter');
+                    taskCounter.textContent = `${task.completed}/${task.total}`;
+
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.classList.add('task-buttons');
+
+                    const decreaseButton = document.createElement('button');
+                    decreaseButton.textContent = 'Ubrat 1';
+                    decreaseButton.onclick = function() {
+                        const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                        if (completed > 0) {
+                            taskCounter.textContent = `${completed - 1}/${total}`;
+                            saveTasks();
+                        }
+                    };
+
+                    const increaseButton = document.createElement('button');
+                    increaseButton.textContent = 'Přidat 1';
+                    increaseButton.onclick = function() {
+                        const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                        if (completed < total) {
+                            taskCounter.textContent = `${completed + 1}/${total}`;
+                            saveTasks();
+                        }
+                    };
+
+                    const completeAllButton = document.createElement('button');
+                    completeAllButton.textContent = 'Splnit vše';
+                    completeAllButton.onclick = function() {
+                        const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                        taskCounter.textContent = `${total}/${total}`;
+                        saveTasks();
+                    };
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Smazat úkol';
+                    deleteButton.onclick = function() {
+                        taskList.removeChild(li);
+                        saveTasks();
+                    };
+
+                    buttonsDiv.appendChild(decreaseButton);
+                    buttonsDiv.appendChild(increaseButton);
+                    buttonsDiv.appendChild(completeAllButton);
+                    buttonsDiv.appendChild(deleteButton);
+
+                    li.textContent = task.text + ' ';
+                    li.appendChild(taskCounter);
+                    li.appendChild(buttonsDiv);
+
+                    taskList.appendChild(li);
+                });
+            }
+        }
+
+        // Funkce pro přidání nového úkolu
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskTotalInput = document.getElementById('taskTotalInput');
+            const taskText = taskInput.value.trim();
+            const totalTasks = parseInt(taskTotalInput.value, 10);
+
+            if (taskText === '' || isNaN(totalTasks) || totalTasks < 1) {
+                alert('Zadejte platný úkol a počet akcí!');
+                return;
+            }
+
+            const taskList = document.getElementById('taskList');
+            const li = document.createElement('li');
+
+            const taskCounter = document.createElement('span');
+            taskCounter.classList.add('task-counter');
+            taskCounter.textContent = `0/${totalTasks}`;
+
+            const buttonsDiv = document.createElement('div');
+            buttonsDiv.classList.add('task-buttons');
+
+            const decreaseButton = document.createElement('button');
+            decreaseButton.textContent = 'Ubrat 1';
+            decreaseButton.onclick = function() {
+                const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                if (completed > 0) {
+                    taskCounter.textContent = `${completed - 1}/${total}`;
+                    saveTasks();
+                }
+            };
+
+            const increaseButton = document.createElement('button');
+            increaseButton.textContent = 'Přidat 1';
+            increaseButton.onclick = function() {
+                const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                if (completed < total) {
+                    taskCounter.textContent = `${completed + 1}/${total}`;
+                    saveTasks();
+                }
+            };
+
+            const completeAllButton = document.createElement('button');
+            completeAllButton.textContent = 'Splnit vše';
+            completeAllButton.onclick = function() {
+                const [completed, total] = taskCounter.textContent.split('/').map(Number);
+                taskCounter.textContent = `${total}/${total}`;
+                saveTasks();
+            };
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Smazat úkol';
+            deleteButton.onclick = function() {
+                taskList.removeChild(li);
+                saveTasks();
+            };
+
+            buttonsDiv.appendChild(decreaseButton);
+            buttonsDiv.appendChild(increaseButton);
+            buttonsDiv.appendChild(completeAllButton);
+            buttonsDiv.appendChild(deleteButton);
+
+            li.textContent = taskText + ' ';
+            li.appendChild(taskCounter);
+            li.appendChild(buttonsDiv);
+
+            taskList.appendChild(li);
+
+            taskInput.value = '';
+            taskTotalInput.value = '';
+
+            saveTasks(); // Uložit úkoly do cookies
+        }
+
+        // Přidání posluchače události pro tlačítko "Přidat úkol"
+        document.getElementById('addTaskButton').addEventListener('click', addTask);
+
+        // Umožnění přidání úkolu stiskem klávesy Enter
+        document.getElementById('taskInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
+
+        // Načíst úkoly při načtení stránky
+        window.onload = loadTasks;
+    </script>
+</body>
+</html>
