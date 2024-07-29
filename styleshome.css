@@ -1,0 +1,151 @@
+body {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column; /* Umožní flexibilní uspořádání */
+    margin: 0; /* Odstranění marginu */
+    height: 100vh; /* Zajistí, že tělo bude mít minimální výšku 100% výšky viewportu */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 40px; /* Zvýšený padding na obou stranách */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Výška headeru stejná jako výška navigačního tlačítka */
+    z-index: 1; /* Header bude nad hlavním obsahem */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mezi logo a název */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: right; /* Zarovná text doprava */
+    margin-right: 60px; /* Vytvoří prostor mezi logem a pravým okrajem */
+    flex: 1; /* Vytvoří prostor pro zarovnání textu doprava */
+}
+
+.header-link {
+    color: white; /* Barva odkazu */
+    text-decoration: none; /* Odstranění podtržení odkazu */
+    margin: 0;
+    font-size: 24px;
+    text-align: right; /* Zarovná text doprava */
+    flex: 1; /* Vytvoří prostor pro zarovnání textu doprava */
+}
+
+.header-link:hover {
+    text-decoration: underline; /* Přidá podtržení při najetí myší */
+    transition: text-decoration 0.3s; /* Přidá plynulý přechod pro textové dekorace */
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2; /* Navigace bude nad headerem */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px; /* Tohle zůstává stejné */
+}
+
+.sidebar a {
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: flex;
+    align-items: center; /* Zarovná ikonu a text vertikálně */
+    transition: 0.3s;
+}
+
+.sidebar .icon {
+    width: 20px; /* Nastav velikost ikony podle potřeby */
+    height: 20px; /* Nastav velikost ikony podle potřeby */
+    margin-right: 10px; /* Mezera mezi ikonou a textem */
+}
+
+.sidebar a:hover {
+    color: #f1f1f1; /* Změna barvy textu při hover */
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    top: 10px; /* Méně paddingu od horního okraje headeru */
+    left: 10px;
+    z-index: 3; /* Tlačítko bude nad navigací a headerem */
+    height: 50px; /* Výška tlačítka */
+    transition: background-color 0.3s; /* Plynulý přechod pro změny pozadí */
+}
+
+
+.openbtn:hover {
+    background-color: #444; /* Změna barvy pozadí při hover */
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 0; /* Odstranění paddingu z hlavního obsahu */
+    display: flex;
+    flex-direction: column; /* Umožní zarovnat footer na spodek */
+    flex: 1; /* Umožní, aby hlavní obsah vyplnil dostupný prostor mezi headerem a footerem */
+    margin-top: 50px; /* Vytvoříme místo pro header */
+    overflow: hidden; /* Zabrání skrolování uvnitř hlavního obsahu */
+}
+
+
+.content {
+    display: flex;
+    align-items: center; /* Vertikálně zarovná text a obrázek */
+    padding: 0; /* Odstranění paddingu kolem obsahu */
+    max-width: 100%; /* Umožní, aby fotka vyplnila celý obsah */
+    position: relative;
+    margin-bottom: 0; /* Odstraní mezery pod obsahem */
+    justify-content: flex-end; /* Zarovná obsah na pravou stranu */
+}
+
+.content2 {
+    max-width: 100%;
+    position: relative;
+    padding-top: 20px; /* Přidání paddingu nahoře */
+    padding-bottom: 20px; /* Přidání paddingu dole */
+    padding-left: 20px; /* Přidání paddingu vlevo */
+    padding-right: 20px; /* Přidání paddingu vpravo */
+    transition: padding 0.3s; /* Plynulý přechod pro padding */
+}
+
+.text {
+    font-size: 24px; /* Velikost textu */
+    color: #333; /* Barva textu */
+    margin-right: auto; /* Posune text k levému okraji */
+    margin-left: 20px; /* Posune text k levému okraji */
+}
+
+.large-image {
+    max-height: calc(100vh - 100px); /* Výška viewportu minus výška headeru a footeru */
+    height: auto; /* Udržuje poměr stran */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    transition: background-color 0.3s; /* Plynulý přechod pro změny pozadí */
+}

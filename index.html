@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patamaswag</title>
+    <link rel="stylesheet" href="styleshome.css"> <!-- Odkaz na tvůj CSS soubor -->
+    <link rel="icon" type="image/x-icon" href="swag.png">
+</head>
+<body>
+    <header>
+        <h1>PATAMASWAG.GURU</h1 class="header-link">
+    </header>
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+    <div class="sidebar">
+        <a href="index.html"><img src="icons/home.png" alt="home" class="icon">domu</a>
+        <a href="autor.html"><img src="icons/user.png" alt="user" class="icon">o autorovi</a>
+        <a href="#"><img src="icons/down.png" alt="user" class="icon">downloads-soon</a>
+        <a href="https://www.instagram.com/kralpata/"><img src="icons/ig.png" alt="instagram" class="icon">instagram</a>
+        <a href="#"><img src="icons/football.png" alt="user" class="icon">FC páťa - soon</a>
+    </div>
+    <div id="main">
+        <div class="content">
+            <div class="text">
+                nejvvesi picoviny😭🔥<br>
+                ⬅️
+            </div>
+            <img src="swag.png" alt="Velká Fotka" class="large-image">
+        </div>
+    </div>
+    <footer>
+        <p>to .guru bylo nejlevnejsi btw🙏</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            var sidebar = document.querySelector(".sidebar");
+            if (sidebar.style.width === '250px') {
+                sidebar.style.width = '0';
+                document.getElementById("main").style.marginLeft = '0';
+            } else {
+                sidebar.style.width = '250px';
+                document.getElementById("main").style.marginLeft = '250px';
+            }
+        }
+    </script>
+</body>
+</html>

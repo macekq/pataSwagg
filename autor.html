@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patamaswag</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="swag.png">
+</head>
+<body>
+    <header>
+        <h1>PATAMASWAG.GURU</h1 class="header-link">
+    </header>
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+    <div class="sidebar">
+        <a href="index.html"><img src="icons/home.png" alt="home" class="icon">domu</a>
+        <a href="autor.html"><img src="icons/user.png" alt="user" class="icon">o autorovi</a>
+        <a href="#"><img src="icons/down.png" alt="user" class="icon">downloads-soon</a>
+        <a href="https://www.instagram.com/kralpata/"><img src="icons/ig.png" alt="instagram" class="icon">instagram</a>
+        <a href="#"><img src="icons/football.png" alt="user" class="icon">FC páťa - soon</a>
+    </div>
+    <div id="main">
+        <div class="content2">
+            <h1>o autorovi🔥</h1>
+            <p>páťa (baller) je znamý tím, že je to mistr v hobbyhorsingu. není žádné tajemství, že vyhrál už všechno co se dá, a tak v pouhých 16 letech odešel do důchodu a nyní se věnuje hudbě a vyučuje swag.</p>
+            <p>autor článku(páťa) je také vášnivým fanouškem a také hráčem fotbalu, a svou snahou si získal místo v kádru REAL MADRID, které ale odmítl se slovy: "nabídky si nesmírně vážím, ale mé srdce patří baníku."💙🤍</p>
+            <p>páťa se svým brudderem lukášem zakládá hudební clique, zaměřený rapu - nejtvrdšímu v celý republice💯💯 debutové album je očekáváno koncem roku 2024, jenže jsme líné mrdky a nechce se nám nic dělat, takže o albu nevíme vůbec žádné informace, i když ho děláme my🤷‍♀️</p>
+            
+            <h2>ocenění</h2>
+            <p>páťa za svou kariéru dostal překvapivě hodně ocenění, přesto že nic nedělal. tady jsou asi ty nejvýznamnější:</p>
+            <ul>
+                <li>2011 - už v 3 letech páťa dostal své první ocenění zhruba týden a půl poté, co nastoupil do školky, čímž získal svůj první street credit, z kterého čerpá doteď🎯🦅</li>
+                <li>2014 - v 6 letech páťa vyhrál první z mnoha titulů v hobbyhorsingu🏌️‍♂️🐐</li>
+                <li>2024 - MVP v nejvyšší fotbalové lize - školní fotbálek🏆⚽</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>to .guru bylo nejlevnejsi btw🙏</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            var sidebar = document.querySelector(".sidebar");
+            if (sidebar.style.width === '250px') {
+                sidebar.style.width = '0';
+                document.getElementById("main").style.marginLeft = '0';
+            } else {
+                sidebar.style.width = '250px';
+                document.getElementById("main").style.marginLeft = '250px';
+            }
+        }
+    </script>
+</body>
+</html>
