@@ -147,3 +147,76 @@ footer {
     position: relative;
     transition: background-color 0.3s; /* Plynulý přechod pro změny pozadí */
 }
+
+#taskList {
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Umožní vertikální rozložení */
+    align-items: flex-start;
+}
+
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-counter {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px; /* Mezera mezi tlačítky */
+    margin-top: 10px;
+}
+
+.task-buttons button {
+    background-color: #4CAF50; /* Změna barvy pozadí tlačítek */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.task-buttons button:hover {
+    background-color: #45a049; /* Změna barvy při hover */
+}
+
+#taskInput, #taskTotalInput {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: calc(100% - 22px); /* Šířka vstupního pole */
+}
+
+#taskTotalInput {
+    max-width: 200px; /* Nastavení maximální šířky pro vstupní pole s počtem úkolů */
+}
+
+#addTaskButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#addTaskButton:hover {
+    background-color: #45a049;
+}
+
