@@ -1,60 +1,60 @@
 body {
     font-family: "Lato", sans-serif;
     display: flex;
-    flex-direction: column; /* Umožní flexibilní uspořádání */
-    margin: 0; /* Odstranění marginu */
-    height: 100vh; /* Zajistí, že tělo bude mít minimální výšku 100% výšky viewportu */
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
 }
 
 header {
     background-color: #333;
     color: white;
-    padding: 10px 40px; /* Zvýšený padding na obou stranách */
+    padding: 10px 40px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* Výška headeru stejná jako výška navigačního tlačítka */
-    z-index: 1; /* Header bude nad hlavním obsahem */
+    height: 50px;
+    z-index: 1;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mezi logo a název */
+    justify-content: space-between;
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
-    text-align: right; /* Zarovná text doprava */
-    margin-right: 60px; /* Vytvoří prostor mezi logem a pravým okrajem */
-    flex: 1; /* Vytvoří prostor pro zarovnání textu doprava */
+    text-align: right;
+    margin-right: 60px;
+    flex: 1;
 }
 
 .header-link {
-    color: white; /* Barva odkazu */
-    text-decoration: none; /* Odstranění podtržení odkazu */
+    color: white;
+    text-decoration: none;
     margin: 0;
     font-size: 24px;
-    text-align: right; /* Zarovná text doprava */
-    flex: 1; /* Vytvoří prostor pro zarovnání textu doprava */
+    text-align: right;
+    flex: 1;
 }
 
 .header-link:hover {
-    text-decoration: underline; /* Přidá podtržení při najetí myší */
-    transition: text-decoration 0.3s; /* Přidá plynulý přechod pro textové dekorace */
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
 }
 
 .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 2; /* Navigace bude nad headerem */
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px; /* Tohle zůstává stejné */
+    padding-top: 60px;
 }
 
 .sidebar a {
@@ -63,18 +63,18 @@ header h1 {
     font-size: 25px;
     color: #818181;
     display: flex;
-    align-items: center; /* Zarovná ikonu a text vertikálně */
+    align-items: center;
     transition: 0.3s;
 }
 
 .sidebar .icon {
-    width: 20px; /* Nastav velikost ikony podle potřeby */
-    height: 20px; /* Nastav velikost ikony podle potřeby */
-    margin-right: 10px; /* Mezera mezi ikonou a textem */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .sidebar a:hover {
-    color: #f1f1f1; /* Změna barvy textu při hover */
+    color: #f1f1f1;
 }
 
 .openbtn {
@@ -85,59 +85,57 @@ header h1 {
     padding: 10px 15px;
     border: none;
     position: fixed;
-    top: 10px; /* Méně paddingu od horního okraje headeru */
+    top: 10px;
     left: 10px;
-    z-index: 3; /* Tlačítko bude nad navigací a headerem */
-    height: 50px; /* Výška tlačítka */
-    transition: background-color 0.3s; /* Plynulý přechod pro změny pozadí */
+    z-index: 3;
+    height: 50px;
+    transition: background-color 0.3s;
 }
 
-
 .openbtn:hover {
-    background-color: #444; /* Změna barvy pozadí při hover */
+    background-color: #444;
 }
 
 #main {
     transition: margin-left .5s;
-    padding: 0; /* Odstranění paddingu z hlavního obsahu */
+    padding: 0;
     display: flex;
-    flex-direction: column; /* Umožní zarovnat footer na spodek */
-    flex: 1; /* Umožní, aby hlavní obsah vyplnil dostupný prostor mezi headerem a footerem */
-    margin-top: 50px; /* Vytvoříme místo pro header */
-    overflow: hidden; /* Zabrání skrolování uvnitř hlavního obsahu */
+    flex-direction: column;
+    flex: 1;
+    margin-top: 50px;
+    overflow: hidden;
 }
-
 
 .content {
     display: flex;
-    align-items: center; /* Vertikálně zarovná text a obrázek */
-    padding: 0; /* Odstranění paddingu kolem obsahu */
-    max-width: 100%; /* Umožní, aby fotka vyplnila celý obsah */
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
     position: relative;
-    margin-bottom: 0; /* Odstraní mezery pod obsahem */
-    justify-content: flex-end; /* Zarovná obsah na pravou stranu */
+    margin-bottom: 0;
+    justify-content: flex-end;
 }
 
 .content2 {
     max-width: 100%;
     position: relative;
-    padding-top: 20px; /* Přidání paddingu nahoře */
-    padding-bottom: 20px; /* Přidání paddingu dole */
-    padding-left: 20px; /* Přidání paddingu vlevo */
-    padding-right: 20px; /* Přidání paddingu vpravo */
-    transition: padding 0.3s; /* Plynulý přechod pro padding */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: padding 0.3s;
 }
 
 .text {
-    font-size: 24px; /* Velikost textu */
-    color: #333; /* Barva textu */
-    margin-right: auto; /* Posune text k levému okraji */
-    margin-left: 20px; /* Posune text k levému okraji */
+    font-size: 24px;
+    color: #333;
+    margin-right: auto;
+    margin-left: 20px;
 }
 
 .large-image {
-    max-height: calc(100vh - 100px); /* Výška viewportu minus výška headeru a footeru */
-    height: auto; /* Udržuje poměr stran */
+    max-height: calc(100vh - 100px);
+    height: auto;
 }
 
 footer {
@@ -147,5 +145,5 @@ footer {
     padding: 10px 0;
     width: 100%;
     position: relative;
-    transition: background-color 0.3s; /* Plynulý přechod pro změny pozadí */
+    transition: background-color 0.3s;
 }
