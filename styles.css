@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'DM Sans', sans-serif; /* Body font set to DM Sans */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #E4E0E1;
+}
+
+/* Banner Section */
+.banner {
+    background-image: url('banner.png'); /* Using banner.png */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 250px; /* Set to 250px */
+    text-align: center;
+    color: #E4E0E1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+    font-family: 'Libre Caslon Display', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    user-select: none;
+}
+
+.banner p {
+    font-family: 'DM Serif Text', serif;
+    font-size: 1.2em;
+    user-select: none;
+}
+
+.bar {
+    background-color: #AB886D;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bar .column {
+    flex: 1;
+    text-align: center;
+    color: #493628;
+    font-family: 'DM Serif Text', serif;
+}
+
+.bar a {
+    text-decoration: none;
+    color: #493628;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.bar a:hover {
+    text-decoration: underline;
+}
+
+/* Sticky Footer */
+.footer {
+    background-color: #493628;
+    color: #E4E0E1;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    width: 100%;
+    font-family: 'DM Serif Text', serif;
+    position: relative; /* Change from fixed to relative */
+    bottom: 0; /* This property is not necessary anymore, as the footer will now stay at the end of the content */
+}
+
+.footer .column {
+    flex: 1;
+    text-align: center;
+}
+
+.footer a {
+    color: #E4E0E1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.footer img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.soon{
+    color: grey;
+    user-select: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'DM Serif Text', serif;
+    font-weight: 400;
+    font-size: 2.75em;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: 'DM Serif Text', serif;
+    font-weight: 400;
+    font-size: 2.25em;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-left: 25px;
+    margin-right: 25px;
+    line-height: 1.5;
+}
+
+form p {
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: 1.5;
+}
+
+legend {
+    font-weight: bold;
+}
+
+fieldset {
+    background-color: #DDD0CA;
+}
+ul {
+    padding-left: 40px;
+    list-style-position: outside;
+}
+
+.scroll-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Optional: Smooth scrolling */
+    padding: 10px; /* Optional: Add padding around the gallery */
+    height: 225px;
+    align-items: center;
+}
+
+.scroll-gallery img {
+    height: 100%;
+    width: auto;
+    margin-right: 10px;
+    border-radius: 8px; /* Optional: Rounded corners */
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.scroll-gallery img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.large-image {
+    display: block;
+    margin: 20px auto; /* Center the image horizontally */
+    height: 350px; /* Maintain aspect ratio */
+}

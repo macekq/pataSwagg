@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATAMASWAG</title>
+    <link rel="icon" href="iconweb.png" type="image/png">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Text&family=Libre+Caslon+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="banner">
+        <h2>PATAMASWAG</h2>
+        <p>nejvetsi dement OAT</p>
+    </div>
+
+    <div class="bar">
+        <div class="column"><a href="autor.html">O autorovi</a></div>
+        <div class="column"><a href="index.html">Home</a></div>
+        <div class="column"><a href="onlyswag.html">Only Swag</a></div>
+    </div>
+
+    <main>
+            <h1>Random Webovky??</h1>
+            <form>
+                <fieldset>
+                    <legend>Datum a čas</legend>
+                        <label for="datum">Datum rezervace</label>
+                        <input type="date" id="datum" required>
+                        <br>
+
+                        <label for="timeStart">Start rezervace</label>
+                        <input type="time" id="timeStart" min="10:00" max="21:00" required>
+                        <br>
+
+                        <label for="timeEnd">Konec rezervace</label>
+                        <input type="time" id="timeEnd" min="11:00" max="22:00" required>
+                        <br>
+                </fieldset><br>
+
+
+                <fieldset>
+                    <legend>Stůl</legend>
+                <label for="stul">Typ stolu</label>
+                <select id="stul" required>
+                    <option value="jeden">Stůl pro jednoho</option>
+                    <option value="dva">Stůl pro dva</option>
+                    <option value="tri" disabled>Stůl pro tři</option>
+                    <option value="ctyri">Stůl pro čtyři</option>
+                    <option value="vice">Stůl pro více lidí</option>
+                </select>
+                <br>
+                
+
+                <p>Výzdoba stolu</p>
+                <input type="radio" id="standard" name="barva" value="yellow" checked="checked"/>
+                <label for="standard">Standardní</label><br />
+                <input type="radio" id="obchodni" name="barva" value="blue"/>
+                <label for="obchodni">Obchodní</label><br />
+                <input type="radio" id="slavnostni" name="barva" value="red"/>
+                <label for="slavnostni">Slavnostní</label>
+                <br>
+
+                <label for="candleColour">Barva svíčky</label>
+                <input type="color" id="candleColour" value="#4E57CA">
+                <br>
+            </fieldset><br>
+
+                <label class="label" for="satna">Využití šatny? </label>
+                <input type="checkbox" id="satna">
+                <br><br>
+
+                <fieldset>
+                    <legend>Kontaktní informace</legend>
+                <label for="name">Jméno</label>
+                <input type="text" name="name" id="name" placeholder="např. Jan Novák" required>
+                <br>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br>
+
+                <label for="telefon">Telefon. číslo</label>
+                <input type="tel" name="telefon" id="telefon" placeholder="Telefonní číslo" required>
+                <br>
+            </fieldset>
+            <br>
+                <label for="desc">Poznámka</label>
+                <textarea name="desc" id="desc" style="resize:both"></textarea>
+                <br><br>
+
+                <button type="submit">Potvrdit</button>
+            </form>
+    </main>
+    
+    <div class="footer">
+        <div class="column">
+            <a href="https://www.instagram.com/kralpata/" target="_blank">
+                <img src="ig.png" alt="instagram"> @kralpata
+            </a>
+        </div>
+        <div class="column">
+            <a href="https://soundcloud.com/kralpata" target="_blank">
+                <img src="sc.png" alt="Icon 2"> soundcloud
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
